@@ -5,7 +5,14 @@
 #include "sdkconfig.h"
 #include "esp_err.h"
 
-#define NUM_LEDS	CONFIG_WS2812_NUM_LEDS
+#define CONFIG_WS2812_LED_TYPE_RGB
+#define CONFIG_WS2812_NUM_LEDS 1
+#define CONFIG_WS2812_LED_RMT_TX_GPIO 8
+#define CONFIG_WS2812_LED_RMT_TX_CHANNEL 2
+#define CONFIG_WS2812_T0H 0 // 0 bit high time
+#define CONFIG_WS2812_T1H 1 // 1 bit high time
+#define CONFIG_WS2812_T0L 0 // 0 bit low time
+#define CONFIG_WS2812_T1L 1 // 1 bit low time
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,7 +22,7 @@ extern "C" {
 // There is a 32bit value for each LED. Only the lower 3 bytes are used and they hold the
 // Red (byte 2), Green (byte 1), and Blue (byte 0) values to be set.
 struct led_state {
-    uint32_t leds[NUM_LEDS];
+    uint32_t leds[CONFIG_WS2812_NUM_LEDS];
 };
 
 // Setup the hardware peripheral. Only call this once.
