@@ -6,9 +6,9 @@
 #include "esp_err.h"
 
 #define CONFIG_WS2812_LED_TYPE_RGB
-#define CONFIG_WS2812_NUM_LEDS 1
+#define CONFIG_WS2812_NUM_LEDS 2
 #define CONFIG_WS2812_LED_RMT_TX_GPIO 8
-#define CONFIG_WS2812_LED_RMT_TX_CHANNEL 2
+#define CONFIG_WS2812_LED_RMT_TX_CHANNEL 1
 #define CONFIG_WS2812_T0H 0 // 0 bit high time
 #define CONFIG_WS2812_T1H 1 // 1 bit high time
 #define CONFIG_WS2812_T0L 0 // 0 bit low time
